@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 path_to_frozen_inference_graph = 'Mask-R-CNN-Weights/frozen_inference_graph_coco.pb'
 path_coco_model= 'Mask-R-CNN-Weights/mask_rcnn_inception_v2_coco_2018_01_28.pbtxt'
-image_path='samples/picnic.jpg'
+image_path='samples/uni/uni-3.jpg'
 colors = np.random.randint(125, 255, (80, 3))
 
 
@@ -41,5 +41,8 @@ for i in range(detection_count):
      for cnt in contours:
          cv2.fillPoly(roi, [cnt], (int(color[0]), int(color[1]), int(color[2])))
 cv2.imshow("Final",np.hstack([img,black_image]))
+# to save the image
+# cv2.imwrite('samples/uni/uni-3-semantic_object_detected.jpg', img)
+# cv2.imwrite('samples/uni/uni-3-semantic_black.jpg', black_image)
 cv2.imshow("Overlay_image",((0.6*black_image)+(0.4*img)).astype("uint8"))
 cv2.waitKey(0)

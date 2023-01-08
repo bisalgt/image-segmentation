@@ -2,8 +2,14 @@ opencv-python
 
 numpy
 
-matplotlib >= 3.6.0
+matplotlib
 
-scipy >= 1.10.0
+scipy
 
-scikit-image >= 0.19.3
+scikit-image
+
+scikit-learn
+
+ipykernel
+
+jupyterlab
